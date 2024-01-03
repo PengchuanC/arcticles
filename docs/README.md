@@ -4,9 +4,10 @@ layout: BlogHome
 icon: home
 title: 首页
 # heroImage: /logo.svg
+# bgImage: /images/sea.jpg
 heroText: 桑榆非晚
 heroFullScreen: false
-tagline: 橘生淮北为枳
+tagline: 学而不思则罔
 projects:
   - icon: code
     name: 回测框架

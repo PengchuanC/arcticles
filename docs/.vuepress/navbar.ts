@@ -71,6 +71,6 @@ export default navbar([
   {
     text: "点个赞吧",
     icon: "gitee",
-    link: "https://github.com/PengchuanC",
+    link: "https://gitee.com/pengchuanchao",
   },
 ]);
