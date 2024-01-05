@@ -13,8 +13,12 @@
   "license": "MIT",
   "devDependencies": {
     "@vuepress/client": "2.0.0-rc.0",
+    "chart.js": "^4.4.1",
     "vue": "^3.3.12",
     "vuepress": "2.0.0-rc.0",
     "vuepress-theme-hope": "2.0.0-rc.7"
+  },
+  "dependencies": {
+    "mathjax-full": "^3.2.2"
   }
 }

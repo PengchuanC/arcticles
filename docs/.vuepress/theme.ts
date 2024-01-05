@@ -20,7 +20,7 @@ export default hopeTheme({
 
   repo: "PengchuanC/arcticles",
 
-  docsDir: "src",
+  docsDir: "docs",
 
   // navbar
   navbar,
@@ -66,9 +66,10 @@ export default hopeTheme({
     mdEnhance: {
       align: true,
       attrs: true,
+      alert: true,
+      chart: true,
       codetabs: true,
       component: true,
-      demo: true,
       figure: true,
       imgLazyload: true,
       imgSize: true,
@@ -104,13 +105,13 @@ export default hopeTheme({
       // flowchart: true,
 
       // gfm requires mathjax-full to provide tex support
-      // gfm: true,
+      gfm: true,
 
       // install katex before enabling it
       // katex: true,
 
       // install mathjax-full before enabling it
-      // mathjax: true,
+      mathjax: true,
 
       // install mermaid before enabling it
       // mermaid: true,
