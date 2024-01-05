@@ -3,6 +3,13 @@ import { sidebar } from "vuepress-theme-hope";
 export default sidebar({
   "/": [
     {
+      text: "基金研究",
+      icon: "boolean",
+      prefix: "fund/",
+      link: "fund/",
+      children: "structure",
+    },
+    {
       text: "FOF系列",
       icon: "result",
       prefix: "fof/",
