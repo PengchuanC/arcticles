@@ -632,4 +632,4 @@ print(sol['x'])
 
 ### 源码获取
 
-可以从[github](https://github.com/PengchuanC/arcticles/codes/rbsa/)上获取到相关数据和处理代码，整体计算还是偏简单的。
+可以从[github](https://github.com/PengchuanC/arcticles/tree/main/codes/rbsa/)上获取到相关数据和处理代码，整体计算还是偏简单的。
