@@ -37,15 +37,13 @@ def get_rbsa(df: pd.DataFrame):
     # 假设有两类资产 A 和 B，它们的收益率分别为 returns_A 和 returns_B
     df = df[["ADJUSTEDNAV", "大盘成长", "大盘价值", "小盘成长", "小盘价值", "中债-总财富(总值)指数"]]
 
-    # 协方差矩阵
-    cov_matrix = df.cov().values
+    X = df.iloc[:, 1:].values
+    Y = df.iloc[:, 0].values
 
     # 定义问题变量
     n_index = len(df.columns) - 1
-    # 我们只关心与基准指数相关的协方差部分
-    P = matrix(cov_matrix[1:, 1:])
-    # 目标函数的线性项向量
-    q = matrix(-cov_matrix[0, 1:])
+    P = matrix(X.T @ X)
+    q = -1*matrix(X.T @ Y)
 
     # 定义不等式约束 Gw <= h，这里的不等式约束为 w >= 0
     G = matrix(-np.eye(n_index))  # 权重非负
@@ -56,8 +54,8 @@ def get_rbsa(df: pd.DataFrame):
     b = matrix(1.0)
 
     # 求解问题
-    solvers.options['show_progress'] = False
-    solution = solvers.qp(P, q, G, h, A, b, maxiters=1e8)
+    solvers.options['show_progress'] = True
+    solution = solvers.qp(P, q, G, h, A, b, maxiters=1e6)
 
     # 提取最优解
     optimal_weights = solution['x']
@@ -86,3 +84,4 @@ if __name__ == "__main__":
     df = pd.concat(dataset, axis=1).T
     df = np.round(df, 4)
     print(df)
+    print(df["中债-总财富(总值)指数"].tolist())
