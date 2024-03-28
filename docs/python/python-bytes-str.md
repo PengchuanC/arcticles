@@ -23,7 +23,7 @@ tag:
 b'abc'
 
 >>> # 转为List[int]
->>> [x for x in a.encode()]
+>>> list(a)
 [97, 98, 99]
 ```
 
